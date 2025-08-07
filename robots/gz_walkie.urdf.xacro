@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot name="walkie_bot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="M_PI" value="3.14159274" />
+
+  <xacro:arg name="use_ros2_control" default="true" />
+  <xacro:arg name="sim_mode" default="false" />
+
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/base/base.urdf.xacro" />
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/omni_wheel/gz_omni_wheel.urdf.xacro" />
+  <!-- <xacro:include filename="$(find walkie_description)/urdf/lidar/lidar_gz.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(find walkie_description)/urdf/imu/imu_gz.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(find walkie_description)/urdf/color.xacro" /> -->
+
+  <!-- =============== Link & Joint =============== -->
+  <!-- Base -->
+  <link name="base_footprint" />
+  <xacro:base_v0 parent="base_footprint">
+    <origin xyz="0 0 0" rpy="0 0 ${M_PI / 4}" />
+  </xacro:base_v0>
+
+  <!-- Wheel -->
+  <!-- 1st wheel -->
+  <xacro:wheel_v0 prefix="b_l" parent="base_link">
+    <origin xyz="0.177622395 0.177622395 0.05" rpy="0 0 -${M_PI/4}" />
+    <axis xyz="0.0 1.0 0.0" />
+  </xacro:wheel_v0>
+
+  <!-- 2nd wheel -->
+  <xacro:wheel_v0 prefix="b_r" parent="base_link">
+    <origin xyz="-0.177622395 0.177622395 0.05" rpy="0 0 -${3*M_PI/4}" />
+    <axis xyz="0.0 1.0 0.0" />
+  </xacro:wheel_v0>
+
+  <!-- 3rd wheel -->
+  <xacro:wheel_v0 prefix="f_r" parent="base_link">
+    <origin xyz="-0.177622395 -0.177622395 0.05" rpy="0 0 -${5*M_PI/4}" />
+    <axis xyz="0.0 1.0 0.0" />
+  </xacro:wheel_v0>
+
+  <!-- 4th wheel -->
+  <xacro:wheel_v0 prefix="f_l" parent="base_link">
+    <origin xyz="0.177622395 -0.177622395 0.05" rpy="0 0 -${7*M_PI/4}" />
+    <axis xyz="0.0 1.0 0.0" />
+  </xacro:wheel_v0>
+
+
+  <!-- lidar sensor -->
+  <!-- <xacro:lidar_v0 prefix="top" parent="base_link"> -->
+    <!-- <origin xyz="0 0 0.05000000000000001" /> -->
+  <!-- </xacro:lidar_v0> -->
+  <!-- <xacro:lidar_gazebo_v0 prefix="top" min_rad="-3.14" max_rad="3.14" min_range="0.02" max_range="10" /> -->
+
+  <!-- imu sensor -->
+  <!-- <xacro:imu_v0 prefix="top" parent="base_link"> -->
+    <!-- <origin xyz="0 0 0.05000000000000001" /> -->
+  <!-- </xacro:imu_v0> -->
+  <!-- <xacro:imu_gazebo_v0 prefix="top" /> -->
+
+  <!-- ===============  Transmission =============== -->
+  <!-- <xacro:wheel_trans_v0 prefix="b_l" /> -->
+  <xacro:wheel_trans_v0 prefix="b_r" />
+  <!-- </xacro:imu_v0-> -->
+  <!-- <xacro:imu_gazebo_v0 prefix="top" /> -->
+
+  <!-- Base -->
+  <!-- <xacro:base_gazebo_v0 /> -->
+
+  <!-- Wheel -->
+  <!-- <xacro:wheel_gazebo_v0 prefix="b_l" /> -->
+  <xacro:wheel_gazebo_v0 prefix="b_r" />
+  <!-- Base -->
+  <!--- <xacro:base_gazebo_v0 /> -->
+
+  <!-- <ros2_control name="GazeboSystem" type="system"> -->
+    <!-- <hardware> -->
+      <!-- <plugin>gz_ros2_control/GazeboSimSystem</plugin> -->
+    <!-- </hardware> -->
+    <!-- <joint name="b_l_wheel_joint"> -->
+      <!-- <command_interface name="velocity"> -->
+        <!-- <param name="min">-3.14</param> -->
+        <!-- <param name="max">3.14</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="velocity" /> -->
+      <!-- <state_interface name="position" /> -->
+    <!-- </joint> -->
+
+    <!-- <joint name="b_r_wheel_joint"> -->
+      <!-- </command_interface> -->
+    -  <!-- <state_interface name="velocity" /> -->
+        <!-- <param name="max">3.14</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="velocity" /> -->
+      <!-- <state_interface name="position" /> -->
+    <!-- </joint> -->
+
+    <!-- <joint name="third_wheel_joint"> -->
+      <!-- <command_interface name="velocity"> -->
+        <!-- <param name="min">-3.14</param> -->
+        <!-- <param name="max">3.14</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="velocity" /> -->
+      <!-- <state_interface name="position" /> -->
+    <!-- </joint> -->
+
+    <!-- <joint name="fourth_wheel_joint"> -->
+      <!-- <command_interface name="velocity"> -->
+        <!-- <param name="min">-3.14</param> -->
+        <!-- <param name="max">3.14</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="velocity" /> -->
+      <!-- <state_interface name="position" /> -->
+    <!-- </joint> -->
+  <!-- </ros2_control> -->
+
+  <!-- <gazebo> -->
+    <!-- <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" -->
+      <!-- filename="libgz_ros2_control-system.so"> -->
+      <!-- <parameters>$(find walkie_description)/config/ros2_controller/my_controllers.yaml</parameters> -->
+    <!-- </plugin> -->
+    <!-- <plugin filename="libignition-gazebo6-pose-publisher-system.so" -->
+      <!-- name="ignition::gazebo::systems::PosePublisher"> -->
+      <!-- <publish_model_pose>true</publish_model_pose> -->
+      <!-- <publish_link_pose>false</publish_link_pose> -->
+      <!-- <publish_nested_model_pose>true</publish_nested_model_pose> -->
+      <!-- <static_publisher>true</static_publisher> -->
+      <!-- <static_update_frequency>10</static_update_frequency> -->
+   <!-- </plugin> -->
+  <!-- </gazebo> -->
+</robot>

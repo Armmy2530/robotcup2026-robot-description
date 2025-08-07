@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find walkie_description)/urdf/inertial_macros.xacro" />
+    <xacro:property name="roller_mass" value="0.0001" />
+    <xacro:property name="roller_radius" value="0.012" />
+    <xacro:macro name="roller" params="prefix num *joint_origin *joint_axis">
+
+        <link name="roller_${prefix}_${num}_link">
+            <xacro:inertial_sphere mass="${roller_mass}" radius="${roller_radius}">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+            </xacro:inertial_sphere>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <sphere radius="${roller_radius}" />
+
+                  <!-- <mesh filename="package://armmy_omnibot/meshes/omni_wheel/Roller_Simplyfier.stl" -->
+                    <!-- scale="0.001 0.001 0.001" /> -->
+
+
+                  <!-- <mesh filename="package://armmy_omnibot/meshes/omni_wheel/Roller_Simplyfier.stl" -->
+                      <!-- optimization="convex_decomposition"> -->
+                        <!-- <convex_decomposition> -->
+                            <!-- <voxel_resolution>500000</voxel_resolution> -->
+                            <!-- <max_convex_hulls>16</max_convex_hulls> -->
+                        <!-- </convex_decomposition> -->
+                      <!-- </mesh> -->
+                </geometry>
+            </collision>
+
+            <surface>
+              <friction>
+                <ode>
+                  <mu1>1.2</mu1>
+                  <mu2>1.2</mu2>
+                  <kp>1e15</kp>
+                  <kd>1e13</kd>
+                </ode>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0.01</restitution_coefficient>
+                <threshold>0</threshold>
+              </bounce>
+              <contact>
+                <ode>
+                  <max_vel>10</max_vel>
+                </ode>
+              </contact>
+            </surface>
+
+            <!-- <surface> -->
+                <!-- <friction> -->
+                    <!-- <ode> -->
+                        <!-- <mu>1.0</mu> -->
+                        <!-- <mu2>1.0</mu2> -->
+                    <!-- </ode> -->
+                <!-- </friction> -->
+                <!-- <contact> -->
+                    <!-- <ode> -->
+                        <!-- <min_depth>0.003</min_depth> -->
+                        <!-- <kp>1e6</kp> -->
+                        <!-- <kd>100</kd> -->
+                    <!-- </ode> -->
+                <!-- </contact> -->
+            <!-- </surface> -->
+        </link>
+        <joint name="roller_${prefix}_${num}_joint" type="continuous">
+            <xacro:insert_block name="joint_origin" />
+            <parent link="${prefix}_wheel_link" />
+            <child link="roller_${prefix}_${num}_link" />
+            <xacro:insert_block name="joint_axis" />
+        </joint>
+    </xacro:macro>
+</robot>
