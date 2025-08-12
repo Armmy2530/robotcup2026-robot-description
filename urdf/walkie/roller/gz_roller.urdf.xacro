@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find walkie_description)/urdf/inertial_macros.xacro" />
+    <xacro:include filename="$(find walkie_description)/urdf/walkie/roller/roller.gazebo.xacro" />
     <xacro:property name="roller_mass" value="0.0001" />
-    <xacro:property name="roller_radius" value="0.012" />
+    <xacro:property name="roller_radius" value="0.019" />
     <xacro:macro name="roller" params="prefix num *joint_origin *joint_axis">
 
         <link name="roller_${prefix}_${num}_link">
@@ -18,7 +19,8 @@
                     <!-- scale="0.001 0.001 0.001" /> -->
 
 
-                  <!-- <mesh filename="package://armmy_omnibot/meshes/omni_wheel/Roller_Simplyfier.stl" -->
+                  <!-- <mesh filename="$(find walkie_description)/meshes/walkie/roller_simplify.stl" -->
+                  <!-- <mesh filename="package://walkie_description/meshes/walkie/roller_simplify_z.stl" -->
                       <!-- optimization="convex_decomposition"> -->
                         <!-- <convex_decomposition> -->
                             <!-- <voxel_resolution>500000</voxel_resolution> -->
@@ -31,8 +33,8 @@
             <surface>
               <friction>
                 <ode>
-                  <mu1>1.2</mu1>
-                  <mu2>1.2</mu2>
+                  <mu1>2.2</mu1>
+                  <mu2>2.2</mu2>
                   <kp>1e15</kp>
                   <kd>1e13</kd>
                 </ode>
@@ -43,7 +45,10 @@
               </bounce>
               <contact>
                 <ode>
-                  <max_vel>10</max_vel>
+                    <min_depth>0.003</min_depth>
+                    <kp>1e6</kp>
+                    <kd>1.0</kd>
+                    <max_vel>10</max_vel>
                 </ode>
               </contact>
             </surface>
@@ -70,5 +75,6 @@
             <child link="roller_${prefix}_${num}_link" />
             <xacro:insert_block name="joint_axis" />
         </joint>
+        <xacro:roller_gazebo_v0 prefix="${prefix}" />
     </xacro:macro>
 </robot>

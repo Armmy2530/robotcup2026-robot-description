@@ -4,12 +4,12 @@
     <transmission name="${prefix}_wheel_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}_wheel_joint">
-	<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        	<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
       </joint>
-	<actuator name="${prefix}_wheel_motor">
-	  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-	  <mechanicalReduction>30</mechanicalReduction>
-        </actuator>
+    	<actuator name="${prefix}_wheel_motor">
+    	  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    	  <mechanicalReduction>30</mechanicalReduction>
+      </actuator>
     </transmission>
   </xacro:macro>
 </robot>

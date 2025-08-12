@@ -35,37 +35,134 @@
             </xacro:inertial_cylinder>
         </link>
 
+
         <xacro:roller prefix="${prefix}" num="1">
-            <origin xyz="0.0055 0.00925 0.0" rpy="0.0 0.0 0.0" />
+            <origin xyz="0.057 0.0139 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="2">
-            <origin xyz="0.0 0.00925 0.0055" rpy="0.0 0.0 0.0" />
-            <axis xyz="-1.0 0.0 0.0" />
+            <origin xyz="0.0559 0.0139 0.0111" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.19509 0.0 0.980785" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="3">
-            <origin xyz="-0.0055 0.00925 0.0" rpy="0.0 0.0 0.0" />
-            <axis xyz="-0.0 0.0 -1.0" />
+            <origin xyz="0.0527 0.0139 0.0218" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.382683 0.0 0.92388" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="4">
-            <origin xyz="-0.0 0.00925 -0.0055" rpy="0.0 0.0 0.0" />
-            <axis xyz="1.0 0.0 -0.0" />
+            <origin xyz="0.0474 0.0139 0.0317" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.55557 0.0 0.83147" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="5">
-            <origin xyz="0.0039 0.00925 0.0039" rpy="0.0 0.0 0.0" />
+            <origin xyz="0.0403 0.0139 0.0403" rpy="0.0 0.0 0.0" />
             <axis xyz="-0.707107 0.0 0.707107" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="6">
-            <origin xyz="-0.0039 0.00925 0.0039" rpy="0.0 0.0 0.0" />
-            <axis xyz="-0.707107 0.0 -0.707107" />
+            <origin xyz="0.0317 0.0139 0.0474" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.83147 0.0 0.55557" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="7">
-            <origin xyz="-0.0039 0.00925 -0.0039" rpy="0.0 0.0 0.0" />
-            <axis xyz="0.707107 0.0 -0.707107" />
+            <origin xyz="0.0218 0.0139 0.0527" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.92388 0.0 0.382683" />
         </xacro:roller>
         <xacro:roller prefix="${prefix}" num="8">
-            <origin xyz="0.0039 0.00925 -0.0039" rpy="0.0 0.0 0.0" />
+            <origin xyz="0.0111 0.0139 0.0559" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.980785 0.0 0.19509" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="9">
+            <origin xyz="0.0 0.0139 0.057" rpy="0.0 0.0 0.0" />
+            <axis xyz="-1.0 0.0 0.0" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="10">
+            <origin xyz="-0.0111 0.0139 0.0559" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.980785 0.0 -0.19509" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="11">
+            <origin xyz="-0.0218 0.0139 0.0527" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.92388 0.0 -0.382683" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="12">
+            <origin xyz="-0.0317 0.0139 0.0474" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.83147 0.0 -0.55557" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="13">
+            <origin xyz="-0.0403 0.0139 0.0403" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.707107 0.0 -0.707107" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="14">
+            <origin xyz="-0.0474 0.0139 0.0317" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.55557 0.0 -0.83147" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="15">
+            <origin xyz="-0.0527 0.0139 0.0218" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.382683 0.0 -0.92388" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="16">
+            <origin xyz="-0.0559 0.0139 0.0111" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.19509 0.0 -0.980785" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="17">
+            <origin xyz="-0.057 0.0139 0.0" rpy="0.0 0.0 0.0" />
+            <axis xyz="-0.0 0.0 -1.0" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="18">
+            <origin xyz="-0.0559 0.0139 -0.0111" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.19509 0.0 -0.980785" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="19">
+            <origin xyz="-0.0527 0.0139 -0.0218" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.382683 0.0 -0.92388" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="20">
+            <origin xyz="-0.0474 0.0139 -0.0317" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.55557 0.0 -0.83147" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="21">
+            <origin xyz="-0.0403 0.0139 -0.0403" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.707107 0.0 -0.707107" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="22">
+            <origin xyz="-0.0317 0.0139 -0.0474" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.83147 0.0 -0.55557" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="23">
+            <origin xyz="-0.0218 0.0139 -0.0527" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.92388 0.0 -0.382683" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="24">
+            <origin xyz="-0.0111 0.0139 -0.0559" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.980785 0.0 -0.19509" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="25">
+            <origin xyz="-0.0 0.0139 -0.057" rpy="0.0 0.0 0.0" />
+            <axis xyz="1.0 0.0 -0.0" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="26">
+            <origin xyz="0.0111 0.0139 -0.0559" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.980785 0.0 0.19509" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="27">
+            <origin xyz="0.0218 0.0139 -0.0527" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.92388 0.0 0.382683" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="28">
+            <origin xyz="0.0317 0.0139 -0.0474" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.83147 0.0 0.55557" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="29">
+            <origin xyz="0.0403 0.0139 -0.0403" rpy="0.0 0.0 0.0" />
             <axis xyz="0.707107 0.0 0.707107" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="30">
+            <origin xyz="0.0474 0.0139 -0.0317" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.55557 0.0 0.83147" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="31">
+            <origin xyz="0.0527 0.0139 -0.0218" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.382683 0.0 0.92388" />
+        </xacro:roller>
+        <xacro:roller prefix="${prefix}" num="32">
+            <origin xyz="0.0559 0.0139 -0.0111" rpy="0.0 0.0 0.0" />
+            <axis xyz="0.19509 0.0 0.980785" />
         </xacro:roller>
 
         <!-- <xacro:roller prefix="${prefix}" num="1"> -->

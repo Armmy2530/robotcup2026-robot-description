@@ -25,15 +25,8 @@
           <mesh filename="package://armmy_omnibot/meshes/omni_wheel/wheel_assembly.dae"
             scale="1 1 1" />
         </geometry>
-        <!-- <material name="light_black" /> -->
       </visual>
-      
-      <!-- <collision>
-        <geometry>
-          <mesh filename="package://armmy_omnibot/meshes/omni_wheel/wheel_base.stl"
-            scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision> -->
+     
 
       <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_thickness}"
         radius="${wheel_radian}">
@@ -60,6 +53,10 @@
         </contact>
       </surface>
     </link>
+  <!-- --- Set Transmission --- -->
+  <xacro:wheel_trans_v0 prefix="${prefix}" />
+  <!-- --- Set Gazebo Params --- -->
+  <xacro:wheel_gazebo_v0 prefix="${prefix}"/>
   </xacro:macro>
 
 </robot>

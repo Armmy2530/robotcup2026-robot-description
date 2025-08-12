@@ -29,8 +29,7 @@
 
       <collision>
         <geometry>
-          <mesh filename="package://armmy_omnibot/meshes/omni_wheel/Roller_Simplyfier.stl"
-            scale="0.001 0.001 0.001" />
+          <mesh filename="package://armmy_omnibot/meshes/omni_wheel/Roller_Simplyfier.stl" />
         </geometry>
       </collision>
 
