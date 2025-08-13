@@ -25,7 +25,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://walkie_description/meshes/walkie/base_link_collision.stl" />
+          <mesh filename="package://walkie_description/meshes/walkie/base_link_collision_fix_origin.stl" />
             <!-- scale="0.001 0.001 0.001" /> -->
         </geometry>
       </collision>

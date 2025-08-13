@@ -29,45 +29,6 @@
                       <!-- </mesh> -->
                 </geometry>
             </collision>
-
-            <surface>
-              <friction>
-                <ode>
-                  <mu1>2.2</mu1>
-                  <mu2>2.2</mu2>
-                  <kp>1e15</kp>
-                  <kd>1e13</kd>
-                </ode>
-              </friction>
-              <bounce>
-                <restitution_coefficient>0.01</restitution_coefficient>
-                <threshold>0</threshold>
-              </bounce>
-              <contact>
-                <ode>
-                    <min_depth>0.003</min_depth>
-                    <kp>1e6</kp>
-                    <kd>1.0</kd>
-                    <max_vel>10</max_vel>
-                </ode>
-              </contact>
-            </surface>
-
-            <!-- <surface> -->
-                <!-- <friction> -->
-                    <!-- <ode> -->
-                        <!-- <mu>1.0</mu> -->
-                        <!-- <mu2>1.0</mu2> -->
-                    <!-- </ode> -->
-                <!-- </friction> -->
-                <!-- <contact> -->
-                    <!-- <ode> -->
-                        <!-- <min_depth>0.003</min_depth> -->
-                        <!-- <kp>1e6</kp> -->
-                        <!-- <kd>100</kd> -->
-                    <!-- </ode> -->
-                <!-- </contact> -->
-            <!-- </surface> -->
         </link>
         <joint name="roller_${prefix}_${num}_joint" type="continuous">
             <xacro:insert_block name="joint_origin" />

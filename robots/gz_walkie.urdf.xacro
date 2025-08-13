@@ -15,7 +15,7 @@
   <!-- Base -->
   <link name="base_footprint" />
   <xacro:base_v0 parent="base_footprint">
-    <origin xyz="0 0 0" rpy="0 0 ${M_PI / 4}" />
+    <origin xyz="0 0 0" rpy="0 0 ${M_PI / 2}" />
   </xacro:base_v0>
   <xacro:base_gazebo_v0 />
 
@@ -28,19 +28,19 @@
 
   <!-- 2nd wheel -->
   <xacro:wheel_v0 prefix="br" parent="base_link">
-    <origin xyz="-0.177622395 0.177622395 0.05" rpy="0 0 -${3*M_PI/4}" />
+    <origin xyz="-0.177622395 0.177622395 0.05" rpy="0 0 ${M_PI/4}" />
     <axis xyz="0.0 1.0 0.0" />
   </xacro:wheel_v0>
 
   <!-- 3rd wheel -->
   <xacro:wheel_v0 prefix="fr" parent="base_link">
-    <origin xyz="-0.177622395 -0.177622395 0.05" rpy="0 0 -${5*M_PI/4}" />
+    <origin xyz="-0.177622395 -0.177622395 0.05" rpy="0 0 ${3*M_PI/4}" />
     <axis xyz="0.0 1.0 0.0" />
   </xacro:wheel_v0>
 
   <!-- 4th wheel -->
   <xacro:wheel_v0 prefix="fl" parent="base_link">
-    <origin xyz="0.177622395 -0.177622395 0.05" rpy="0 0 -${7*M_PI/4}" />
+    <origin xyz="0.177622395 -0.177622395 0.05" rpy="0 0 ${5*M_PI/4}" />
     <axis xyz="0.0 1.0 0.0" />
   </xacro:wheel_v0>
 
