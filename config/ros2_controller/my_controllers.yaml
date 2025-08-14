@@ -27,7 +27,7 @@ forward_velocity_controller:
 
 omni_wheel_drive_controller:
   ros__parameters:
-    # wheel_offset: 0.0
+    wheel_offset: 0.7853981633974485
     wheel_names:
       [
         "fl_wheel_joint",
@@ -40,7 +40,7 @@ omni_wheel_drive_controller:
     wheel_radius: 0.076
 
     odom_frame_id: odom
-    base_frame_id: base_link
+    base_frame_id: base_footprint
     pose_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     twist_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 

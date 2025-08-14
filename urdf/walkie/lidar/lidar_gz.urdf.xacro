@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find armmy_omnibot)/urdf/lidar/lidar.gz.xacro" />
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/lidar/lidar.gz.xacro" />
 
   <xacro:macro name="lidar_v0" params="prefix parent *joint_origin">
     <joint name="${prefix}_lidar_joint" type="fixed">

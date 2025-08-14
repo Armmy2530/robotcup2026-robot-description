@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <robot name="walkie_bot" xmlns:xacro="http://ros.org/wiki/xacro">
-
   <xacro:property name="M_PI" value="3.14159274" />
 
   <xacro:arg name="use_ros2_control" default="true" />
   <xacro:arg name="sim_mode" default="true" />
 
-  <xacro:include filename="$(find walkie_description)/urdf/walkie/base/base.urdf.xacro" />
-  <xacro:include filename="$(find walkie_description)/urdf/walkie/omni_wheel/gz_omni_wheel.urdf.xacro" />
-  <!-- <xacro:include filename="$(find walkie_description)/urdf/lidar/lidar_gz.urdf.xacro" /> -->
-  <!-- <xacro:include filename="$(find walkie_description)/urdf/imu/imu_gz.urdf.xacro" /> -->
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/base/base.urdf.xacro"/>
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/omni_wheel/gz_omni_wheel.urdf.xacro"/>
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/lidar/lidar_gz.urdf.xacro"/>
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/imu/imu_gz.urdf.xacro"/>
 
   <!-- =============== Link & Joint =============== -->
   <!-- Base -->
@@ -44,18 +43,17 @@
     <axis xyz="0.0 1.0 0.0" />
   </xacro:wheel_v0>
 
-
   <!-- lidar sensor -->
-  <!-- <xacro:lidar_v0 prefix="top" parent="base_link"> -->
-    <!-- <origin xyz="0 0 0.05000000000000001" /> -->
-  <!-- </xacro:lidar_v0> -->
-  <!-- <xacro:lidar_gazebo_v0 prefix="top" min_rad="-3.14" max_rad="3.14" min_range="0.02" max_range="10" /> -->
+  <xacro:lidar_v0 prefix="top" parent="base_link">
+    <origin xyz="0 -0.19 0.315" />
+  </xacro:lidar_v0>
+  <xacro:lidar_gazebo_v0 prefix="top" min_rad="-3.14" max_rad="3.14" min_range="0.02" max_range="10" />
 
   <!-- imu sensor -->
-  <!-- <xacro:imu_v0 prefix="top" parent="base_link"> -->
-    <!-- <origin xyz="0 0 0.05000000000000001" /> -->
-  <!-- </xacro:imu_v0> -->
-  <!-- <xacro:imu_gazebo_v0 prefix="top" /> -->
+  <xacro:imu_v0 prefix="top" parent="base_link">
+    <origin xyz="0 0 0.17" />
+  </xacro:imu_v0>
+  <xacro:imu_gazebo_v0 prefix="top" />
 
   <xacro:if value="$(arg use_ros2_control)">
     <xacro:include filename="$(find walkie_description)/urdf/walkie/ros2_control.xacro"/>
