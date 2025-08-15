@@ -6,7 +6,7 @@
 
   <xacro:property name="bass_thickness" value="0.008" />
   <xacro:property name="base_radian" value="0.040" />
-  <xacro:property name="base_mass" value="2.2" />
+  <xacro:property name="base_mass" value="20.2" />
 
   <xacro:macro name="base_v0" params="parent *joint_origin">
     <joint name="base_link_joint" type="fixed">
