@@ -32,7 +32,7 @@ def generate_launch_description():
     package_dir = os.path.join(get_package_share_directory(package_name))
 
     robot_model = LaunchConfiguration('robot_model', default=os.path.join(get_package_share_directory(package_name), 'robots','gz_walkie.urdf.xacro'))
-    use_ros2_control = LaunchConfiguration('use_ros2_control', default='true')
+    ros2_control = LaunchConfiguration('ros2_control', default='gazebo')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
     rviz_config_file = LaunchConfiguration('rviz_config_file')
@@ -62,7 +62,7 @@ def generate_launch_description():
         launch_arguments={
             'use_sim_time': use_sim_time,
             'robot_model': robot_model,
-            'use_ros2_control': use_ros2_control,
+            'ros2_control': ros2_control,
         }.items()
     )
     

@@ -2,8 +2,7 @@
 <robot name="walkie_bot" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:property name="M_PI" value="3.14159274" />
 
-  <xacro:arg name="use_ros2_control" default="true" />
-  <xacro:arg name="sim_mode" default="true" />
+  <xacro:arg name="ros2_control" default="gazebo" />
 
   <xacro:include filename="$(find walkie_description)/urdf/walkie/base/base.urdf.xacro"/>
   <xacro:include filename="$(find walkie_description)/urdf/walkie/omni_wheel/gz_omni_wheel.urdf.xacro"/>
@@ -62,7 +61,5 @@
   </xacro:imu_v0>
   <xacro:imu_gazebo_v0 prefix="top" />
 
-  <xacro:if value="$(arg use_ros2_control)">
-    <xacro:include filename="$(find walkie_description)/urdf/walkie/ros2_control.xacro"/>
-  </xacro:if>
+  <xacro:include filename="$(find walkie_description)/urdf/walkie/ros2_control.xacro" />
 </robot>
